@@ -1,6 +1,6 @@
 const express = require("express");
-const actionsDB = require("../data/helpers/actionModel")
-const projectsDB = require("../data/helpers/projectModel")
+const actionsDB = require("../data/actions-model")
+const projectsDB = require("../data/projects-model")
 const router = express.Router();
 
 
