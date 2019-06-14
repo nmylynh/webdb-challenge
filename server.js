@@ -1,8 +1,8 @@
 const express = require('express');
 const server = express();
 const configureMiddleware = require('./middleware');
-const projects = require('./routes/projects-router');
-const actions = require('./routes/actions-router');
+const projects = require('./routers/projects-router');
+const actions = require('./routers/actions-router');
 
 configureMiddleware(server);
 
