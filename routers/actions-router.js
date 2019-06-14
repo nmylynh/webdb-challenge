@@ -15,12 +15,13 @@ const validateActionBody = (req, res, next) => {
 
 const validateAPID = async (req, res, next) => {
     try {
-    const {project_id} = req.body;
-    const action = await projectsDB.get(project_id);
+        const {project_id} = req.body;
+        const action = await projectsDB.get(project_id);
 
-    action 
-    ? next()
-    : res.status(404).json({message: "invalid id"});  
+        action 
+        ? next()
+        : res.status(404).json({message: "invalid id"});  
+
     } catch(err) {
         res.status(400).json({message: "missing action id"});
     }
@@ -28,12 +29,13 @@ const validateAPID = async (req, res, next) => {
 
 const validateActionId = async (req, res, next) => {
     try {
-    const {id} = req.params;
-    const action = await actionsDB.get(id);
+        const {id} = req.params;
+        const action = await actionsDB.get(id);
 
-    action 
-    ? next()
-    : res.status(404).json({message: "invalid id"});  
+        action 
+        ? next()
+        : res.status(404).json({message: "invalid id"});  
+        
     } catch(err) {
         res.status(400).json({message: "missing action id"});
     }

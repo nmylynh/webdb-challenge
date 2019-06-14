@@ -7,12 +7,13 @@ const router = express.Router();
 
 const validateActionId = async (req, res, next) => {
     try {
-    const {project_id} = req.body;
-    const action = await projectsDB.get(project_id);
+        const {project_id} = req.body;
+        const action = await projectsDB.get(project_id);
 
-    action 
-    ? next()
-    : res.status(404).json({message: "invalid id"});  
+        action 
+        ? next()
+        : res.status(404).json({message: "invalid id"});  
+        
     } catch(err) {
         res.status(400).json({message: "missing action id"});
     }
@@ -20,12 +21,13 @@ const validateActionId = async (req, res, next) => {
 
 const validateProjectId = async (req, res, next) => {
     try {
-    const {id} = req.params;
-    const project = await projectsDB.get(id);
+        const {id} = req.params;
+        const project = await projectsDB.get(id);
 
-    project 
-    ? next()
-    : res.status(404).json({message: "invalid id"});  
+        project 
+        ? next()
+        : res.status(404).json({message: "invalid id"});  
+
     } catch(err) {
         res.status(400).json({message: "missing project id"});
     }
