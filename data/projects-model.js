@@ -58,7 +58,7 @@ function remove(id) {
 }
 
 function getProjectActions(projectId) {
-  return db('actions')
-    .where('project_id', projectId)
-    .then(actions => actions.map(action => mappers.actionToBody(action)));
+  return db('actions') // give me actions
+    .where('project_id', projectId) // where project_id matches projectId
+    .then(actions => actions.map(action => mappers.actionToBody(action))); //then, for each action, add completed: false or true depending on integer 
 }
